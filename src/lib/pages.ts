@@ -1,3 +1,6 @@
+import type { Block } from './blocks';
+import { validateBlock } from './blocks';
+
 export interface Page {
   id: string;
   title: string;
@@ -5,8 +8,11 @@ export interface Page {
   parentId: string | null;
   order: number;
   summary?: string;
-  contentType: 'markdown';
-  content: string;
+  // legacy markdown fields kept for compatibility
+  contentType?: 'markdown';
+  content?: string;
+  // blocks-based content (preferred)
+  blocks?: Block[];
   figmaEmbedUrl?: string;
   codeSnippets?: {
     react?: string;
@@ -25,16 +31,14 @@ export interface Page {
 
     const p = page as Partial<Page>;
   
-    // Required fields
+    // Required fields (lean validation)
     if (
       typeof p.id !== 'string' ||
       typeof p.title !== 'string' ||
       typeof p.slug !== 'string' ||
       typeof p.order !== 'number' ||
-      typeof p.content !== 'string' ||
       typeof p.lastUpdated !== 'string' ||
-      !['Draft', 'Published', 'Archived'].includes(p.status || '') ||
-      p.contentType !== 'markdown'
+      !['Draft', 'Published', 'Archived'].includes(p.status || '')
     ) {
       return false;
     }
@@ -60,6 +64,14 @@ export interface Page {
         (snippets.tokensJson !== undefined && typeof snippets.tokensJson !== 'string')
       ) {
         return false;
+      }
+    }
+
+    // Blocks validation (if present)
+    if (p.blocks !== undefined) {
+      if (!Array.isArray(p.blocks)) return false;
+      for (const b of p.blocks) {
+        if (!validateBlock(b)) return false;
       }
     }
 
