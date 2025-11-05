@@ -3,5 +3,6 @@
   "/api/pages/route": "app/api/pages/route.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/logindash/page": "app/logindash/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/page/[id]/page": "app/page/[id]/page.js"
 }
