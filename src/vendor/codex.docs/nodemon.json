@@ -1,0 +1,15 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules",
+    "public",
+    "src/frontend"
+  ],
+  "watch": [
+    "**/*"
+  ],
+  "ext": "ts,js,twig",
+  "execMap": {
+    "ts": "node --loader ts-node/esm"
+  }
+}
