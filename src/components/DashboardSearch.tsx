@@ -4,9 +4,11 @@ import type { Page } from '@/lib/pages';
 interface DashboardSearchProps {
   pages: Page[];
   onFilter: (filtered: Page[]) => void;
+  onBulkAction: (action: 'publish' | 'archive' | 'delete', pageIds: string[]) => void;
+  selectedPageIds: string[];
 }
 
-export default function DashboardSearch({ pages, onFilter }: DashboardSearchProps) {
+export default function DashboardSearch({ pages, onFilter, onBulkAction, selectedPageIds }: DashboardSearchProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState<'title' | 'lastUpdated'>('lastUpdated');
   const [filterType, setFilterType] = useState<'all' | 'foundations' | 'components'>('all');
@@ -84,7 +86,7 @@ export default function DashboardSearch({ pages, onFilter }: DashboardSearchProp
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
           />
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 items-center">
           <select
             value={sortBy}
             onChange={(e) => handleSortChange(e.target.value as 'title' | 'lastUpdated')}
@@ -112,6 +114,28 @@ export default function DashboardSearch({ pages, onFilter }: DashboardSearchProp
             <option value="Published">Published</option>
             <option value="Archived">Archived</option>
           </select>
+          {selectedPageIds.length > 0 && (
+            <div className="flex gap-2">
+              <button
+                onClick={() => onBulkAction('publish', selectedPageIds)}
+                className="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              >
+                Publish Selected
+              </button>
+              <button
+                onClick={() => onBulkAction('archive', selectedPageIds)}
+                className="px-4 py-2 text-sm font-medium text-white bg-yellow-600 rounded-md hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+              >
+                Archive Selected
+              </button>
+              <button
+                onClick={() => onBulkAction('delete', selectedPageIds)}
+                className="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              >
+                Delete Selected
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

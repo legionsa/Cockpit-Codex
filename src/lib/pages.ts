@@ -20,6 +20,52 @@ export interface Page {
   children?: Page[];
 }
 
+  export function validatePage(page: unknown): page is Page {
+    if (!page || typeof page !== 'object') return false;
+
+    const p = page as Partial<Page>;
+  
+    // Required fields
+    if (
+      typeof p.id !== 'string' ||
+      typeof p.title !== 'string' ||
+      typeof p.slug !== 'string' ||
+      typeof p.order !== 'number' ||
+      typeof p.content !== 'string' ||
+      typeof p.lastUpdated !== 'string' ||
+      !['Draft', 'Published', 'Archived'].includes(p.status || '') ||
+      p.contentType !== 'markdown'
+    ) {
+      return false;
+    }
+
+    // Optional fields
+    if (
+      (p.parentId !== undefined && p.parentId !== null && typeof p.parentId !== 'string') ||
+      (p.summary !== undefined && typeof p.summary !== 'string') ||
+      (p.figmaEmbedUrl !== undefined && typeof p.figmaEmbedUrl !== 'string') ||
+      (p.version !== undefined && typeof p.version !== 'string') ||
+      (p.tags !== undefined && (!Array.isArray(p.tags) || !p.tags.every(tag => typeof tag === 'string')))
+    ) {
+      return false;
+    }
+
+    // Code snippets validation
+    if (p.codeSnippets !== undefined) {
+      const snippets = p.codeSnippets as Record<string, unknown>;
+      if (
+        typeof snippets !== 'object' ||
+        (snippets.react !== undefined && typeof snippets.react !== 'string') ||
+        (snippets.tailwind !== undefined && typeof snippets.tailwind !== 'string') ||
+        (snippets.tokensJson !== undefined && typeof snippets.tokensJson !== 'string')
+      ) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
 export function generateSlug(title: string): string {
   return title
     .toLowerCase()
