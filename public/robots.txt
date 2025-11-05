@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /logindash
+Disallow: /dashboard
+
+Sitemap: /sitemap.xml

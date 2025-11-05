@@ -1,0 +1,12 @@
+{
+  "id": "foundations",
+  "title": "Foundations",
+  "slug": "foundations",
+  "parentId": null,
+  "order": 1,
+  "contentType": "markdown",
+  "content": "# Foundations\n\nThe building blocks of our design system, including color, typography, grid, and more.",
+  "status": "Published",
+  "lastUpdated": "2025-11-05T00:00:00.000Z",
+  "tags": ["foundations"]
+}

@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "username": "binbin",
+      "passwordHash": "$2b$12$M9onspqQXb9X331RyMMsBuWF//tQ0PznnIlhrdE1dVLebmxWz5tT."
+    }
+  ]
+}

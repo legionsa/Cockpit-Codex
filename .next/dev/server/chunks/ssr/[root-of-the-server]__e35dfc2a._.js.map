@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/lion/Documents/%5B01%5D%20Projects/Cockpit%20Codex/src/app/page.tsx"],"sourcesContent":["export default function Home() {\n  return (\n    <main className=\"flex min-h-screen flex-col items-center justify-center p-24\">\n      <h1 className=\"text-4xl font-bold mb-4\">\n        Cockpit Design System Codex\n      </h1>\n      <p className=\"text-xl\">\n        Your central source for design system documentation\n      </p>\n    </main>\n  )\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;QAAK,WAAU;;0BACd,8OAAC;gBAAG,WAAU;0BAA0B;;;;;;0BAGxC,8OAAC;gBAAE,WAAU;0BAAU;;;;;;;;;;;;AAK7B","debugId":null}}]
+}

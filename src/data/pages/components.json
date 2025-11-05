@@ -1,0 +1,12 @@
+{
+  "id": "components",
+  "title": "Components",
+  "slug": "components",
+  "parentId": null,
+  "order": 2,
+  "contentType": "markdown",
+  "content": "# Components\n\nReusable UI components that follow our design principles and guidelines.",
+  "status": "Published",
+  "lastUpdated": "2025-11-05T00:00:00.000Z",
+  "tags": ["components"]
+}
