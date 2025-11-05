@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 interface BlockRendererProps {
   block: Block;
-  onUpdate: (content: string) => void;
+  onUpdate: (content: string | string[]) => void;
   onDelete: () => void;
 }
 

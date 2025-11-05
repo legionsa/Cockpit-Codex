@@ -117,20 +117,18 @@ function PageEditor({ page, parentId, onSave }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                         className: "block text-sm font-medium mb-1",
-                        children: "Content (Markdown)"
+                        children: "Content"
                     }, void 0, false, {
                         fileName: "[project]/src/components/PageEditor.tsx",
                         lineNumber: 76,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-                        value: formData.content,
-                        onChange: (e)=>setFormData((prev)=>({
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(BlockEditor, {
+                        initialBlocks: formData.blocks || [],
+                        onChange: (blocks)=>setFormData((prev)=>({
                                     ...prev,
-                                    content: e.target.value
-                                })),
-                        className: "w-full px-3 py-2 border rounded-md font-mono",
-                        rows: 20
+                                    blocks
+                                }))
                     }, void 0, false, {
                         fileName: "[project]/src/components/PageEditor.tsx",
                         lineNumber: 79,
@@ -149,7 +147,7 @@ function PageEditor({ page, parentId, onSave }) {
                         children: "Figma Embed URL"
                     }, void 0, false, {
                         fileName: "[project]/src/components/PageEditor.tsx",
-                        lineNumber: 88,
+                        lineNumber: 86,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -164,13 +162,13 @@ function PageEditor({ page, parentId, onSave }) {
                         title: "Must be a valid Figma embed URL"
                     }, void 0, false, {
                         fileName: "[project]/src/components/PageEditor.tsx",
-                        lineNumber: 91,
+                        lineNumber: 89,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PageEditor.tsx",
-                lineNumber: 87,
+                lineNumber: 85,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -183,7 +181,7 @@ function PageEditor({ page, parentId, onSave }) {
                                 children: "React Code"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PageEditor.tsx",
-                                lineNumber: 103,
+                                lineNumber: 101,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -199,13 +197,13 @@ function PageEditor({ page, parentId, onSave }) {
                                 rows: 6
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PageEditor.tsx",
-                                lineNumber: 106,
+                                lineNumber: 104,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PageEditor.tsx",
-                        lineNumber: 102,
+                        lineNumber: 100,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -215,7 +213,7 @@ function PageEditor({ page, parentId, onSave }) {
                                 children: "Tailwind Code"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PageEditor.tsx",
-                                lineNumber: 121,
+                                lineNumber: 119,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -231,13 +229,13 @@ function PageEditor({ page, parentId, onSave }) {
                                 rows: 6
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PageEditor.tsx",
-                                lineNumber: 124,
+                                lineNumber: 122,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PageEditor.tsx",
-                        lineNumber: 120,
+                        lineNumber: 118,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -247,7 +245,7 @@ function PageEditor({ page, parentId, onSave }) {
                                 children: "Tokens JSON"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PageEditor.tsx",
-                                lineNumber: 139,
+                                lineNumber: 137,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -263,19 +261,19 @@ function PageEditor({ page, parentId, onSave }) {
                                 rows: 6
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PageEditor.tsx",
-                                lineNumber: 142,
+                                lineNumber: 140,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PageEditor.tsx",
-                        lineNumber: 138,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PageEditor.tsx",
-                lineNumber: 101,
+                lineNumber: 99,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -285,7 +283,7 @@ function PageEditor({ page, parentId, onSave }) {
                         children: "Tags (comma-separated)"
                     }, void 0, false, {
                         fileName: "[project]/src/components/PageEditor.tsx",
-                        lineNumber: 158,
+                        lineNumber: 156,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -298,13 +296,13 @@ function PageEditor({ page, parentId, onSave }) {
                         className: "w-full px-3 py-2 border rounded-md"
                     }, void 0, false, {
                         fileName: "[project]/src/components/PageEditor.tsx",
-                        lineNumber: 161,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PageEditor.tsx",
-                lineNumber: 157,
+                lineNumber: 155,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -314,7 +312,7 @@ function PageEditor({ page, parentId, onSave }) {
                         children: "Status"
                     }, void 0, false, {
                         fileName: "[project]/src/components/PageEditor.tsx",
-                        lineNumber: 173,
+                        lineNumber: 171,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -330,7 +328,7 @@ function PageEditor({ page, parentId, onSave }) {
                                 children: "Draft"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PageEditor.tsx",
-                                lineNumber: 184,
+                                lineNumber: 182,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -338,7 +336,7 @@ function PageEditor({ page, parentId, onSave }) {
                                 children: "Published"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PageEditor.tsx",
-                                lineNumber: 185,
+                                lineNumber: 183,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -346,19 +344,19 @@ function PageEditor({ page, parentId, onSave }) {
                                 children: "Archived"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/PageEditor.tsx",
-                                lineNumber: 186,
+                                lineNumber: 184,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/PageEditor.tsx",
-                        lineNumber: 176,
+                        lineNumber: 174,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PageEditor.tsx",
-                lineNumber: 172,
+                lineNumber: 170,
                 columnNumber: 7
             }, this),
             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -366,7 +364,7 @@ function PageEditor({ page, parentId, onSave }) {
                 children: error
             }, void 0, false, {
                 fileName: "[project]/src/components/PageEditor.tsx",
-                lineNumber: 191,
+                lineNumber: 189,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -378,12 +376,12 @@ function PageEditor({ page, parentId, onSave }) {
                     children: isLoading ? 'Saving...' : 'Save'
                 }, void 0, false, {
                     fileName: "[project]/src/components/PageEditor.tsx",
-                    lineNumber: 195,
+                    lineNumber: 193,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/PageEditor.tsx",
-                lineNumber: 194,
+                lineNumber: 192,
                 columnNumber: 7
             }, this)
         ]
@@ -441,7 +439,7 @@ function DashboardSearch({ pages, onFilter, onBulkAction, selectedPageIds }) {
         ];
         // Apply search
         if (search) {
-            filtered = filtered.filter((page)=>page.title.toLowerCase().includes(search.toLowerCase()) || page.content.toLowerCase().includes(search.toLowerCase()));
+            filtered = filtered.filter((page)=>page.title.toLowerCase().includes(search.toLowerCase()) || (page.content?.toLowerCase() || '').includes(search.toLowerCase()));
         }
         // Apply type filter
         if (type !== 'all') {

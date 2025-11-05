@@ -63,7 +63,7 @@ __turbopack_context__.s([
 function validateBlock(block) {
     if (!block || typeof block !== 'object') return false;
     const b = block;
-    if (typeof b.type !== 'string') return false;
+    if (typeof b.type !== 'string' || typeof b.id !== 'string') return false;
     switch(b.type){
         case 'heading':
             return (b.level === 1 || b.level === 2 || b.level === 3) && typeof b.content === 'string';

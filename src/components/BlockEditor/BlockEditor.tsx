@@ -2,12 +2,16 @@
 
 import { useState } from 'react';
 import { Block } from '@/lib/blocks';
-import BlockPalette from './BlockPalette';
-import BlockRenderer from './BlockRenderer';
+import BlockPalette from '@/components/BlockEditor/BlockPalette';
+import BlockRenderer from '@/components/BlockEditor/BlockRenderer';
 
 interface BlockEditorProps {
   initialBlocks?: Block[];
   onChange?: (blocks: Block[]) => void;
+}
+
+interface BlockUpdateHandler {
+  (content: string | string[]): void;
 }
 
 export default function BlockEditor({ initialBlocks = [], onChange }: BlockEditorProps) {
@@ -79,7 +83,7 @@ export default function BlockEditor({ initialBlocks = [], onChange }: BlockEdito
           <BlockRenderer
             key={block.id}
             block={block}
-            onUpdate={(content) => handleUpdateBlock(block.id, content)}
+            onUpdate={(content: string | string[]) => handleUpdateBlock(block.id, content)}
             onDelete={() => handleDeleteBlock(block.id)}
           />
         ))}

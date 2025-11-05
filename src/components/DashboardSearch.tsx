@@ -46,7 +46,7 @@ export default function DashboardSearch({ pages, onFilter, onBulkAction, selecte
     if (search) {
       filtered = filtered.filter(page =>
         page.title.toLowerCase().includes(search.toLowerCase()) ||
-        page.content.toLowerCase().includes(search.toLowerCase())
+        (page.content?.toLowerCase() || '').includes(search.toLowerCase())
       );
     }
 

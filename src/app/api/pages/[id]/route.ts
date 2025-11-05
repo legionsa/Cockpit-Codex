@@ -7,13 +7,11 @@ const pagesDir = path.join(process.cwd(), 'src/data/pages');
 const redirectsPath = path.join(process.cwd(), 'src/data/redirects.json');
 
 // GET /api/pages/[id] - Get single page
-export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
+export async function GET(request: Request) {
+  const id = request.url.split('/').pop()!;
   try {
     const content = await fs.readFile(
-      path.join(pagesDir, `${params.id}.json`),
+      path.join(pagesDir, `${id}.json`),
       'utf8'
     );
     return NextResponse.json(JSON.parse(content));
@@ -26,12 +24,10 @@ export async function GET(
 }
 
 // PUT /api/pages/[id] - Update page
-export async function PUT(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
+export async function PUT(request: Request) {
+  const id = request.url.split('/').pop()!;
   const data = await request.json();
-  const filePath = path.join(pagesDir, `${params.id}.json`);
+  const filePath = path.join(pagesDir, `${id}.json`);
 
   try {
     const content = await fs.readFile(filePath, 'utf8');
@@ -53,7 +49,7 @@ export async function PUT(
     const updatedPage: Page = {
       ...existingPage,
       ...data,
-      id: params.id, // Prevent ID changes
+      id, // Prevent ID changes
       lastUpdated: new Date().toISOString()
     };
 
@@ -68,11 +64,9 @@ export async function PUT(
 }
 
 // DELETE /api/pages/[id] - Archive page
-export async function DELETE(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
-  const filePath = path.join(pagesDir, `${params.id}.json`);
+export async function DELETE(request: Request) {
+  const id = request.url.split('/').pop()!;
+  const filePath = path.join(pagesDir, `${id}.json`);
 
   try {
     const content = await fs.readFile(filePath, 'utf8');

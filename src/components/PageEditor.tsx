@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import type { Page } from '@/lib/pages';
+import BlockEditor from '@/components/BlockEditor/BlockEditor';
+import type { Block } from '@/lib/blocks';
 
 interface PageEditorProps {
   page?: Page;
@@ -74,13 +76,11 @@ export default function PageEditor({ page, parentId, onSave }: PageEditorProps) 
 
       <div>
         <label className="block text-sm font-medium mb-1">
-          Content (Markdown)
+          Content
         </label>
-        <textarea
-          value={formData.content}
-          onChange={(e) => setFormData(prev => ({ ...prev, content: e.target.value }))}
-          className="w-full px-3 py-2 border rounded-md font-mono"
-          rows={20}
+        <BlockEditor
+          initialBlocks={formData.blocks || []}
+          onChange={(blocks) => setFormData(prev => ({ ...prev, blocks }))}
         />
       </div>
 
